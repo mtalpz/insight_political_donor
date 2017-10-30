@@ -50,7 +50,7 @@ void heapify (deque<float> *heap, bool max)
     stringstream msg;
 
     msg << "Started heapify with max = " << (max ? "TRUE" : "FALSE");
-    logger (__DATE__, __TIME__, __FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
+    logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
     msg.str("");
 
     while (parent < heap->size()) {
@@ -86,7 +86,7 @@ void heapify (deque<float> *heap, bool max)
     }
    
     msg << "Finished heapify with max = " << (max ? "TRUE" : "FALSE");
-    logger (__DATE__, __TIME__, __FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
+    logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
     msg.str("");
     return;
 }
@@ -131,12 +131,12 @@ void balance_min_heap( deque<float> *min_heap )
 	min or max heap based on bool and then maintian heap property.
 ************************************************************/
 
-void insert_heap ( deque<float> heap, float num, bool max )
+void insert_heap ( deque<float> *heap, float num, bool max )
 {
     stringstream msg;
 
     msg << "Started heap insertion with max = " << (max ? "TRUE" : "FALSE");
-    logger (__DATE__, __TIME__, __FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
+    logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
     msg.str("");
 
     heap->push_back(num);
@@ -156,7 +156,7 @@ void insert_heap ( deque<float> heap, float num, bool max )
     }
 
     msg << "Finished heap insertion with max = " << (max ? "TRUE" : "FALSE");
-    logger (__DATE__, __TIME__, __FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
+    logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), DEBUG);
     msg.str("");
     return;
 }

@@ -27,4 +27,4 @@ $(EXE): $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o $(OUTDIR)/* $(LDIR)/* *~ core $(EXE)
+	rm -f $(ODIR)/*.o $(OUTDIR)/* $(LDIR)/* $(EDIR)/* *~ core 

@@ -315,16 +315,18 @@ void write_output_date_file(ofstream *out)
 	return;
 }
 
-**************************************************** 
-//Function to insert new amount in min or max heap based on the status of two heaps and setup parameters for heap operations
-**************************************************** 
+/******************************************************** 
+	//Function to insert new amount in min or max heap 
+	based on the status of two heaps and setup parameters
+	for heap operations
+********************************************************/ 
 
 void insert_to_balance_heap (deque<float> *max_heap, deque<float> *min_heap, float num)
 {
     stringstream msg;
 
     msg << "Started to insert " << num << " into heap and balance if needed";
-    logger (__DATE__, __TIME__, __FILE__, __FUNCTION__, __LINE__, msg.str(), INFO);
+    logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), INFO);
     msg.str("");
 
     bool balance = false;
@@ -391,4 +393,5 @@ void insert_to_balance_heap (deque<float> *max_heap, deque<float> *min_heap, flo
 
     return;
 }
+
 /*======================================================*/

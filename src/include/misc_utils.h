@@ -1,4 +1,4 @@
-/*****************************************************
+/**********************************************
 Created Oct 2017: Find Political Donors 
 ***********************************************/
 
@@ -6,6 +6,7 @@ Created Oct 2017: Find Political Donors
 #include <sstream>
 #include <fstream>
 #include <string>
+#include <string.h>
 
 using namespace std;
 
@@ -17,9 +18,9 @@ enum LOG_LEVEL {
 	DEBUG = 4
 };
 
-/***************************************************************************
+/***********************************************
  All Functions:
-***************************************************************************/
+************************************************/
 
 //Function to write log details for debugging
 void logger (string file, string function, int line, string message, int level);
