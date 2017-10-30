@@ -29,7 +29,8 @@ int get_median( deque<float> *max_heap, deque<float> *min_heap )
 	else if ( (*max_heap).size() < (*min_heap).size() )
 		median = (int) ( (*min_heap)[0] + 0.5 );
 	else {
-		median = (int) (( (*max_heap)[0] + (*min_heap)[0] ) /2 ) +0.5;
+		float sum = (*max_heap)[0] + (*min_heap)[0];
+		median = (int) ((sum/2) + 0.5);
 	}
 
 	msg << "Returning median = " << median;
