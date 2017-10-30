@@ -8,7 +8,7 @@ Test scripts use ./run.sh provided at toplevel
 
 
 **REPOSITORY**
-For the directory structure since it is specified every test should have a separate folder with an input folder for itcont.txt and an output folder, I have added the output folder "output" with a ".keep" file under it in the repository. The actual *.txt files will be written here @runtime.
+I have added the output folder "output" with a ".keep" file under it in the repository. The actual *.txt files will be written here @runtime.
 
 
 
