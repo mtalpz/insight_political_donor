@@ -2,10 +2,12 @@
 
 **To run the case, please use ./run.sh**
 
-( The first time we run using ./run.sh, additional folders - "output","src/bin", "src/obj", "src/logs" will be created. On following runs, these folders already exist, so prompt will be displayed accordingly. output is overwritten )
+( The first time we run using ./run.sh, additional folders - "output","src/bin", "src/obj", "src/logs" will be created. On following runs, these folders already exist, so prompt will be displayed accordingly. *.txt files are overwritten )
 
 
-The directory structure is as follows:
+**REPOSITORY**
+For the directory structure since it is specified every test should have a separate folder with an input folder for itcont.txt and an output folder, I have added the output folder "output" with a README under it in the repository. The actual *.txt files will be written here @runtime.
+
 
 
 **APPROACH:**
@@ -25,4 +27,11 @@ The entire functionality to print the two outout files has been split into prima
 All src files have corresponding header files located at src/include/* . The function declarations are provided in header files.
 
 
-  
+//TO TEST
+//chcek max size of input line ? if > 1024??
+// if lines in between 2 records in input file
+//if trans amount number(14,2) float or integer, is it rounded in final output?
+//parse-strtok, why preincrement?
+// check input same recipient , different zip
+// check input diff recipient , same zip
+//get transaction amount (it could be of type float 14,2) as specified, convert to int? 
