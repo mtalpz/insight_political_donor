@@ -2,17 +2,20 @@
 
 **To run the case, please use ./run.sh**
 
-( The first time we run using ./run.sh, additional folders - "output","src/bin", "src/obj", "src/logs" will be created. On following runs, these folders already exist, so prompt will be displayed accordingly. *.txt files are overwritten )
+Test scripts use ./run.sh provided at toplevel
+
+( The first we run "./run.sh", additional folders - "src/bin", "src/obj", "src/logs" will be created. On following runs, these folders already exist, so prompt will be displayed accordingly. *.txt files are overwritten )
 
 
 **REPOSITORY**
-For the directory structure since it is specified every test should have a separate folder with an input folder for itcont.txt and an output folder, I have added the output folder "output" with a README under it in the repository. The actual *.txt files will be written here @runtime.
+For the directory structure since it is specified every test should have a separate folder with an input folder for itcont.txt and an output folder, I have added the output folder "output" with a ".keep" file under it in the repository. The actual *.txt files will be written here @runtime.
 
 
 
 **APPROACH:**
 
 The entire functionality to print the two outout files has been split into primarily 3 source files and 3 header files.
+A Makefile is added under src.
 
 1- **find_political_donors.cc**
   It is the top level file which parses the input txt file and then populates record structure for evaluating median values by using zip and median values by using date. The output for medianvals_by_zip.txt is written as we parse each line as here, there can be duplicates and the median and total are the running median and total and printed accordingly for duplicate cases. The output for medianvals_by_date.txt is written after the entire input file is parsed as we need all the records pertaining to a particular recipient for a particular date and then provide just a unique output record with requested details.
