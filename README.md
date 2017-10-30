@@ -1,4 +1,4 @@
-##insight_political_donor
+**insight_political_donor**
 
 *To run the case, please use ./run.sh*
 ( The first time we run using ./run.sh, additional folders - "output","src/bin", "src/obj", "src/logs" will be created. On following runs, these folders already exist, so prompt will be displayed accordingly. output is overwritten )
