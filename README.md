@@ -17,11 +17,12 @@ eg: "./run.sh 3" ----->This will provide all DEBUG information in log file.
 Repository directory structure is created based on details provided.
 
 "src" folder has multiple files/folders under it all related to the application flow.
-The first time we run "./run.sh", additional folders - "src/bin", "src/obj", "src/logs" will be created. On following runs, these folders already exist, so prompt will be displayed accordingly.  A Makefile is added under "src" to build the binary.
+src/include, src/logs, src/obj, src/bin
+When "./run.sh" is executed, the Makefile added under "src" is used to build the binary.
 
 "input" folder has sample input file "itcont.txt" is stored under it
 
-"output" folder is added ( with a ".keep" file under it) in the repository. The actual *.txt files will be written here @runtime.
+"output" folder is added in the repository. The actual *.txt files will be written here @runtime.
 Existing *.txt files are removed and then written for consecutive runs.
 
 
@@ -67,10 +68,9 @@ The expected output for medianvals_by_date.txt will be just one record with cumu
 
 *test_4*:This is a reduced file (for size resctrictions to add to repository) originaly obtained from FEC website.(Tested originaly using large file to check actual data size from FEC). We can observe the output file is sorted by recipient name and then by the date chronologically in medianvals_by_date.txt
 
-**TBD**
+**Future cases**
 
-*test_4*:Unable to add this input file to git repository due to large size.  
-Using a script compare runtime performance for consecutive runs for future enhancements or modifications to measure runtime. In the script we can compare the current runtime with earlier runtime and ensure they are within a fixed tolerance,else generate a warning indicating any issue.  
+- Using a script compare runtime performance for consecutive runs for future enhancements or modifications to measure runtime. In the script we can compare the current runtime with earlier runtime and ensure they are within a fixed tolerance,else generate a warning indicating any issue.  
 - Currently the code does not thoroughly check the validity of the entire input data. It only tests for selected tokens to be valid in the input data as specified under data considerations. It assumes input data is always provided in text form and does not check for it before parsing. These functionalities can be added as well.
--Another test would be to check the output text files always contains five fields for each record. 
--Test that the no of records in output file can at max be equal to no of records in input text file. 
+- Another test would be to check the output text files always contains five fields for each record. 
+- Test that the no of records in output file can at max be equal to no of records in input text file. 
