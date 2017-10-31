@@ -84,8 +84,8 @@ char *strtok_parse (char *str, char const *delim)
 	Function to check if the date provided in input file is valid
 	MMDDYYYY
 ************************************************************/
-bool isValid( string date) {
-	
+bool isValid( string date) 
+{
 	stringstream msg;
 
 	if ( ( date == "" ) || date.size() != 8 ) {
@@ -107,18 +107,13 @@ bool isValid( string date) {
 	//Need current date to get upper bound for MM DD YYYY
     time_t rawtime;
     struct tm * timeinfo;
-    char m[3];
-    char d[3];
-    char y[5];
 
     time (&rawtime);
     timeinfo = localtime (&rawtime);
-    strftime (m,3,"%m",timeinfo);
-    int curr_month = stoi ((const char *)m, NULL, 10);
-    strftime (d,3,"%d",timeinfo);
-    long curr_day = strtol ((const char *)d, NULL, 10);
-    strftime (y,5,"%Y",timeinfo);
-    long curr_yr = strtol ((const char *)y, NULL, 10);
+
+	int curr_yr  = timeinfo->tm_year + 1900;
+  	int curr_month = timeinfo->tm_mon + 1;
+  	int curr_day = timeinfo->tm_mday;
 
 	//Validate MMDDYYYY format
 	string month = date.substr(0,2);

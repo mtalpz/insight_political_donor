@@ -7,6 +7,7 @@ Created Oct 2017: Find Political Donors
 #include <fstream>
 #include <string>
 #include <string.h>
+#include <ctime>
 
 using namespace std;
 

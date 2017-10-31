@@ -10,13 +10,6 @@ Will output files:
 	medianvals_by_zip.txt
 	medianvals_by_date.txt
 
-//chcek max size of input line ? if > 1024??
-// if lines in between 2 records in input file
-//if trans amount number(14,2) float or integer, is it rounded in final output?
-//parse-strtok, why preincrement?
-// check input same recipient , different zip
-// check input diff recipient , same zip
-//get transaction amount (it could be of type float 14,2) as specified, convert to int?
 ***********************************************/
 
 #include <find_political_donors.h>
@@ -43,13 +36,25 @@ int main ( int argc, char* argv[])
 
 	//open global log file and set log level
 	log_file.open (LOG_FILE);
-	log_level = DEBUG;
+	log_level = INFO;
+ 	clock_t startcputime, endcputime;
 
+	if ( argc > 1 ) {
+		if ( !strcmp(argv[1],"0") )
+			log_level = ERROR;
+		else if ( !strcmp(argv[1],"1") )
+			log_level = WARNING;
+		else if ( !strcmp(argv[1],"2") )
+			log_level = INFO;
+		else if ( !strcmp(argv[1],"3") )
+			log_level = DEBUG;
+	}
+		
 	msg << endl << "==================================="<< endl;
 	msg << "Running file find_political_donors" << endl;
 	msg << endl << "==================================="<< endl;
 	logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), INFO);
-	msg.str();
+	msg.str("");
 
 	//Taking input file 
 	ifstream input;
@@ -68,6 +73,7 @@ int main ( int argc, char* argv[])
 	//Open meadianvals_by_date file to write results to it
 	output_date.open (OUTPUT_DATE_FILE);
 
+    startcputime = clock();
 	if ( input.is_open() ) {
 		
 		// Parse each line from file and write to medianvals_zip.txt simultaneously
@@ -82,19 +88,25 @@ int main ( int argc, char* argv[])
 		//Now write to medianvals_date.txt file after reading input file completely
 		write_output_date_file(&output_date);
 
+		output_date.close();
+
 		msg << endl << "==================================="<< endl;
 		msg << "Processing done." << endl;
 		msg << endl << "==================================="<< endl;
 		logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), INFO);
-		msg.str();
-
-		output_date.close();
-
+		msg.str("");
 		cout << "Processing done. Check results in output folder.Check logs in src/logs folder." << endl;
 	}	
 	else {
 		cout << "Error in opening input file %s"<< INPUT_FILE << endl;
 	}
+
+    endcputime = clock();
+    float diff ((float)endcputime-(float)startcputime);
+
+	msg << endl << "Elapsed CPU time is " << diff/CLOCKS_PER_SEC << " seconds"<< endl ;
+	logger (__FILE__, __FUNCTION__, __LINE__, msg.str(), INFO);
+	msg.str("");
 
 	log_file.close();
 	return 0;

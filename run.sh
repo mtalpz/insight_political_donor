@@ -12,6 +12,6 @@ echo ""
 echo "===================="
 echo "Running"
 echo "--------------------"
-./bin/find_political_donors
+./bin/find_political_donors $1
 cd ..
 echo ""
