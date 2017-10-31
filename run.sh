@@ -2,7 +2,7 @@ echo ""
 echo "=============================="
 echo "Setting up folders (if needed)"
 echo "=============================="
-mkdir src/logs src/obj src/bin
+mkdir output src/logs src/obj src/bin
 echo "===================="
 echo "Building "
 echo "--------------------"
