@@ -65,12 +65,12 @@ Tests are run using provided script "run_tests.sh" where result is compared to e
 The expected output for medianvals_by_zip.txt - the no of records will match the no of records in input file, while updating the median and total.
 The expected output for medianvals_by_date.txt will be just one record with cumulative value.
 
-*test_4*:This test has been provided by picking an actual input file from the FEC website to test actual data size. We can observe the output file is sorted by recipient name and then by the date chronologically in medianvals_by_date.txt
+*test_4*:This is a reduced file (for size resctrictions to add to repository) originaly obtained from FEC website.(Tested originaly using large file to check actual data size from FEC). We can observe the output file is sorted by recipient name and then by the date chronologically in medianvals_by_date.txt
 
 **TBD**
-Additional script "run_test_time.sh" is added which is used to compare runtime performance for consecutive runs for future enhancements or modifications. 
 
--test_4:This test has been provided by picking an actual input file from the FEC website to test actual data size and measure performance-runtime. In the script we can compare the current runtime with earlier runtime and ensure they are within a fixed tolerance - else generate a warning indicating any issue.  
+*test_4*:Unable to add this input file to git repository due to large size.  
+Using a script compare runtime performance for consecutive runs for future enhancements or modifications to measure runtime. In the script we can compare the current runtime with earlier runtime and ensure they are within a fixed tolerance,else generate a warning indicating any issue.  
 - Currently the code does not thoroughly check the validity of the entire input data. It only tests for selected tokens to be valid in the input data as specified under data considerations. It assumes input data is always provided in text form and does not check for it before parsing. These functionalities can be added as well.
 -Another test would be to check the output text files always contains five fields for each record. 
 -Test that the no of records in output file can at max be equal to no of records in input text file. 
